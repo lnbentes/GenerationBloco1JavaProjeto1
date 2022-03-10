@@ -4,23 +4,30 @@ import java.util.ArrayList;
 
 public class Armazenar {
 	
-	ArrayList<Object> armaz;
+	ArrayList<Questionario> armaz;
 	
 	public Armazenar() {
-		armaz = new ArrayList<Object>();
+		armaz = new ArrayList<>();
 	}
 	
-	public void armazenar(Usuario user, Questionario quest) {
-		armaz.add(user);
+	public void armazenarQuestionario(Questionario quest) {
 		armaz.add(quest);
 	}
 	
-	public Usuario getUsuario(int numero) {
-		return (Usuario) armaz.get(numero);
+	public Questionario getQuestionario(int numero) {
+		return armaz.get(numero);
 	}
 	
-	public Questionario getQuestionario(int numero) {
-		return (Questionario) armaz.get(numero);
+	public int indexQuestUsuario(int idUsuario) {
+		int index = 0;
+		for(int i = 0; i < armaz.size(); i++) {
+			
+			if(idUsuario == armaz.get(i).getIdUduario()) {
+				index = i;
+			}
+			
+		}
+		return index;
 	}
 
 }

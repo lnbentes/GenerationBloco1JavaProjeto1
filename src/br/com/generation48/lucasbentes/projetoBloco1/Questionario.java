@@ -5,16 +5,18 @@ import java.util.ArrayList;
 public class Questionario implements moldeQuestionario {
 	
 	private ArrayList<Integer> quest;
+	private int idUduario;
 	
-	public Questionario() {
-		quest = new ArrayList<>();
+	public Questionario(int idUduario) {
+		this.quest = new ArrayList<>();
+		this.idUduario = idUduario;
 	}
 	
 	@Override
 	public void listarPerguntas() {
-		System.out.println("Pergunta 1 - De 0 a 10 gstou do sabor do bolo?");
-		System.out.println("Pergunta 2 - De 0 a 10 gstou da textura do bolo?");
-		System.out.println("Pergunta 3 - De 0 a 10 gstou do cheiro do bolo?");
+		System.out.println("Pergunta 1 - De 0 a 10 gstou do sabor do chocolate?");
+		System.out.println("Pergunta 2 - De 0 a 10 gstou da textura do chocolate?");
+		System.out.println("Pergunta 3 - De 0 a 10 gstou do cheiro do chocolate?");
 	}
 	
 	@Override
@@ -37,6 +39,10 @@ public class Questionario implements moldeQuestionario {
 	
 	public int tamanho() {
 		return quest.size();
+	}
+	
+	public int getIdUduario() {
+		return this.idUduario;
 	}
 
 }

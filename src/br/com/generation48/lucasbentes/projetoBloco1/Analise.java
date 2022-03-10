@@ -2,41 +2,89 @@ package br.com.generation48.lucasbentes.projetoBloco1;
 
 public class Analise {
 	
-	private int soma;
+	private int somaNorte;
+	private int somaSul;
+	private int somaLeste;
+	private int somaOeste;
+	private int saborRuim;
+	private int saborBom;
+	private int saborOtimo;
 	
-	public double mediaSabor(Questionario questa1, Questionario questa2, Questionario questa3) {
-		this.soma = questa1.pegarResposta(0) + questa2.pegarResposta(0) + questa3.pegarResposta(0);
-		return this.soma / 3;
-	}
-	public double mediaSabor(Questionario questa1, Questionario questa2) {
-		this.soma = questa1.pegarResposta(0) + questa2.pegarResposta(0);
-		return this.soma / 2;
-	}
 	
-	public double mediaTextura(Questionario questa1, Questionario questa2, Questionario questa3) {
-		this.soma = questa1.pegarResposta(1) + questa2.pegarResposta(1) + questa3.pegarResposta(1);
-		return this.soma / 3;
-	}
-	public double mediaTextura(Questionario questa1, Questionario questa2) {
-		this.soma = questa1.pegarResposta(0) + questa2.pegarResposta(0);
-		return this.soma / 2;
-	}
-	
-	public double mediaCheiro(Questionario questa1, Questionario questa2, Questionario questa3) {
-		this.soma = questa1.pegarResposta(2) + questa2.pegarResposta(2) + questa3.pegarResposta(2);
-		return this.soma / 3;
-	}
-	public double mediaCheiro(Questionario questa1, Questionario questa2) {
-		this.soma = questa1.pegarResposta(0) + questa2.pegarResposta(0);
-		return this.soma / 2;
-	}
-	
-	public double mediaTotal(Questionario questa) {
-		for(int i = 0; i < questa.tamanho(); i++) {
-			this.soma = this.soma + questa.pegarResposta(i);
+	public void saborRegiaoNorte(Usuario u1, Questionario q1) {
+		if(u1.getEndereco() == "norte" && q1.pegarResposta(0) >= 0 && q1.pegarResposta(0) <= 4 ) {
+			this.saborRuim = this.saborRuim + 1;
 		}
-		return this.soma / questa.tamanho();
+		else if(u1.getEndereco() == "norte" && q1.pegarResposta(0) == 5) {
+			this.saborBom = this.saborBom + 1;
+		}
+		else if(u1.getEndereco() == "norte" && q1.pegarResposta(0) >= 6 && q1.pegarResposta(0) <= 10 ) {
+			this.saborOtimo = this.saborOtimo + 1;
+		}
+		
 	}
+	
+	public void respostaNorte() {
+		System.out.println("Dados do Norte: ");
+		System.out.println("Achou ruim: " + this.saborRuim);
+		System.out.println("Achou bom: " + this.saborBom);
+		System.out.println("Achou otimo: " + this.saborOtimo);
+	}
+	
+	
+	
+	//######################################
+	
+	//Faz as contagem do sabor do produto
+	public void sabor(int sabor) {
+		if(sabor >= 0 && sabor <= 4) {
+			this.saborRuim++;
+		}else if(sabor == 5) {
+			this.saborBom++;
+		}else if(sabor >= 6 && sabor <= 10) {
+			this.saborOtimo++;
+		}
+	}
+	
+	//Os get do sabor
+	public int saborRuim() {
+		return saborRuim;
+	}
+	public int saborBom() {
+		return saborBom;
+	}
+	public int saborOtimo() {
+		return saborOtimo;
+	}
+	
+	//Faz a contagem de pessoas por regiao
+	public void regiao(String nome) {
+		if(nome == "norte") {
+			this.somaNorte++;
+		}else if(nome == "sul") {
+			this.somaSul++;
+		}else if(nome == "leste") {
+			this.somaLeste++;
+		}else if(nome == "oeste") {
+			this.somaOeste++;
+		}
+	}
+	
+	//Os gets das regios
+	public int regiaoNorte(){
+		return this.somaNorte;
+	}
+	public int regiaoSul(){
+		return this.somaSul;
+	}
+	public int regiaoLeste(){
+		return this.somaLeste;
+	}
+	public int regiaoOeste(){
+		return this.somaOeste;
+	}
+	
+	
 	
 	
 	

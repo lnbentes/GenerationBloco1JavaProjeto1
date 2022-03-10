@@ -2,23 +2,23 @@ package br.com.generation48.lucasbentes.projetoBloco1;
 
 public class Usuario extends Pessoa{
 	
-	private String endereco;
+	private String estado;
 	private char sexo;
 	private int idade;
 	
-	public Usuario(String nome, int id, String endereco, char sexo, int idade) {
+	public Usuario(String nome, int id, String estado, char sexo, int idade) {
 		super.setNome(nome);
 		super.setId(id);
-		this.endereco = endereco;
+		this.estado = estado;
 		this.idade = idade;
 		this.sexo = sexo;
 	}
 	
 	public String getEndereco() {
-		return endereco;
+		return estado;
 	}
 	public void setEndereco(String endereco) {
-		this.endereco = endereco;
+		this.estado = endereco;
 	}
 	public char getSexo() {
 		return sexo;

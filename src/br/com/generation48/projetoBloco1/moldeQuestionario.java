@@ -1,4 +1,4 @@
-package br.com.generation48.lucasbentes.projetoBloco1;
+package br.com.generation48.projetoBloco1;
 
 public interface moldeQuestionario {
 	

@@ -52,12 +52,7 @@ public class Main {
 		do {
 			System.out.print("Digite a senha de administrador: ");
 			
-			try {
-				senha = ler.nextInt();
-				}catch(Exception e) {
-					System.out.println("So aceita numeros inteiros!!!");
-					senha = 0;
-				}
+			senha = ler.nextInt();
 			
 			if(senha != pesq.getIdP()) {
 				System.out.println("Senha errada!!!");

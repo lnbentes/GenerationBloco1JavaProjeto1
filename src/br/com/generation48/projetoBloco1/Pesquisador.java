@@ -22,17 +22,5 @@ public class Pesquisador extends Pessoa{
 		this.idP = idP;
 	}
 	
-	public int validarSenha() {
-		int senha = 0;
-		try {
-			senha = ler.nextInt();
-			}catch(Exception e) {
-				System.out.println("So aceita numeros inteiros!!!");
-				senha = 0;
-			}
-			return senha;
-	}
-	
-	
 
 }

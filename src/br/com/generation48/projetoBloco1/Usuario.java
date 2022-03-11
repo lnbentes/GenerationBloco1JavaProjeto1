@@ -1,7 +1,10 @@
 package br.com.generation48.projetoBloco1;
 
+import java.util.Scanner;
+
 public class Usuario extends Pessoa{
 	
+	Scanner ler = new Scanner(System.in);
 	private String estado;
 	private char sexo;
 	private int idade;
@@ -33,5 +36,15 @@ public class Usuario extends Pessoa{
 		this.idade = idade;
 	}
 	
+	public int testarResposta() {
+		int resposta = 0;
+	try {
+		resposta = ler.nextInt();
+		}catch(Exception e) {
+			System.out.println("So aceita numeros inteiros!!!");
+			resposta = 0;
+		}
+		return resposta;
+}
 	
 }

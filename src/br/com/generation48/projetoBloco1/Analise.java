@@ -2,9 +2,9 @@ package br.com.generation48.projetoBloco1;
 
 public class Analise {
 	
-	private int saborRuim;
-	private int saborBom;
-	private int saborOtimo;
+	private int saborRuim;  //0 - 4
+	private int saborBom;  // 5
+	private int saborOtimo;  //6 -10
 	
 	
 	public void saborRegiaoNorte(Usuario u1, Questionario q1) {
